@@ -1,0 +1,316 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cetacea Sound | Web Developer Portfolio of RJ Goetz</title>
+        <meta name="description" content="RJ Goetz is a Marketing Director and Web Developer working for Cetacea Sound">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Raleway:400,700|Source+Code+Pro:500" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/css.css">
+        <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header class="wrap">
+          <a href="../"><h1>R.J.</h1></a>
+          <p>R.J. Goetz is a Web Developer based in Minneapolis, MN</p>
+          <nav>
+            <ul>
+              <li><a class="nav-active" href="../">Portfolio</a></li>
+              <li><a href="../about">About</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <img class="hero-desktop" src="../../img/cetacea-all-devices.jpg" alt="cetacea sound website on iMac&reg; iPhone&reg; iPad&reg;">
+          <img class="hero-mobile" src="../../img/cetacea-iphone-main.png" alt="cetacea sound website on iPhone&reg;">
+
+          <div class="no-pad">
+            <article>
+              <div class="grid">
+                <div class="col-7-12 offset-2-12">
+                  <h1>Cetacea Sound</h1>
+
+                  <p>As Marketing Director, I am responsible for the performance of the Cetacea Sound company website. Analytics data showed that the site audience had shifted to 24% mobile users by 2015 / 2016 compared to 3% in 2011, the last point when the company website was redesigned. Mobile traffic underperformed desktop in bounce rate and site duration. It was time to modernize the company website to address these concerns.</p>
+
+                  <p><a href="http://cs.csmstatic.com" target="_blank">Visit site.</a></p>
+
+                  <h2>My Role</h2>
+                  <p>In summer 2016, I led the conceptualization, design, and development of the website while working in collaboration with staff graphic design for content production, design consultation, and testing.</p>
+                </div>
+
+                <div class="col-3-12 offset-2-12 project-details">
+                  <h3>Project Goals</h3>
+                  <ul>
+                    <li>Design mobile-first, responsive layout</li>
+                    <li>Refresh branding</li>
+                    <li>Support HD / Retina&reg; graphics</li>
+                    <li>Create SVG illustrations</li>
+                    <li>Achieve &lt;5 second LTE page load</li>
+                    <li>Remove ROT content</li>
+                  </ul>
+                </div>
+
+                <div class="col-3-12 offset-1-12 project-details">
+                  <h3>Technologies</h3>
+                  <ul>
+                    <li>HTML5</li>
+                    <li>CSS3, SASS</li>
+                    <li>JavaScript, jQuery</li>
+                    <li>PHP</li>
+                    <li>Responsive Design</li>
+                    <li>Git</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="blue-article code">
+              <div class="grid">
+                <div class="col-8-12 offset-2-12">
+                  <img src="../../img/cetacea-imac-main.png" alt="Cetacea website on iMac&reg;">
+                </div>
+
+                <a class="github" href="https://github.com/rjgoetz/cetacea"><img src="../../img/github-logo.png" alt="github logo"></a>
+                <h1>Code Samples</h1>
+
+                <div class="grid">
+                  <h2><span>1x &nbsp; 2x &nbsp; 3x</span>HD / Retina&reg; Graphics</h2>
+
+                  <div class="col-2-12 offset-1-12">
+                    <figure class="retina-1x">
+                      <img src="../../img/astronaut-cl-hero.jpg" alt="Astronaut CL 1x graphic">
+                    </figure>
+                  </div>
+
+                  <div class="col-3-12">
+                    <figure class="retina-2x">
+                      <img src="../../img/astronaut-cl-hero_2x.jpg" alt="Astronaut CL 1x graphic">
+                    </figure>
+                  </div>
+
+                  <div class="col-4-12">
+                    <figure class="retina-3x">
+                      <img src="../../img/astronaut-cl-hero_3x.jpg" alt="Astronaut CL 1x graphic">
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <div class="col-8-12 offset-2-12">
+<pre><code>// main.js
+
+var
+  pixelRatio = window.devicePixelRatio,
+  images = document.getElementsByTagName("img"),
+  imageSrc,
+  imageType,
+  imageSrcLessType,
+  imageSrcOutput
+;
+
+// loop through document images, collect src value, and append 2x or 3x depending on device pixel ratio
+for (var i = 0; i < images.length; i++) {
+  imageSrc = images[i].getAttribute("src");
+  imageType = imageSrc.slice(-4);
+  imageSrcLessType = imageSrc.slice(0, -4);
+  if (imageType != ".svg") {
+    if (pixelRatio >= 2 && pixelRatio < 3) {
+      imageSrcOutput = imageSrcLessType + "_2x" + imageType;
+      images[i].setAttribute("src", imageSrcOutput);
+    } else if (pixelRatio >= 3) {
+      imageSrcOutput = imageSrcLessType + "_3x" + imageType;
+      images[i].setAttribute("src", imageSrcOutput);
+    }
+  }
+}
+
+// Responsive graphics: default mobile; change image source for tablet or desktop version of graphic into HTML document.
+var folder;
+
+function createImgFolderOutput() {
+  var
+    imgArray = $("img"),
+    srcString,
+    srcStringBeg,
+    srcStringEnd,
+    output
+  ;
+
+  for (var i = 0; i < imgArray.length; i++) {
+    srcString = $(imgArray[i]).attr("src");
+    var imageType = srcString.slice(-4);
+
+    if (imageType != ".svg") {
+
+      // does "desktop/" or "tablet/" exist in src?
+      if (srcString.search("desktop/") > -1) {
+
+        // prune "desktop/" from srcString
+        srcStringBeg = srcString.slice(0, srcString.indexOf("desktop/"), 8);
+        srcStringEnd = srcString.slice(srcString.indexOf("desktop/") + 8);
+
+        // concatenate new srcString
+        srcString = srcStringBeg + srcStringEnd;
+      } else if (srcString.search("tablet/") > -1) {
+
+        // prune "tablet/" from srcString
+        srcStringBeg = srcString.slice(0, srcString.indexOf("tablet/"), 7);
+        srcStringEnd = srcString.slice(srcString.indexOf("tablet/") + 7);
+
+        // concatenate new srcString
+        srcString = srcStringBeg + srcStringEnd;
+      }
+
+      var n = srcString.indexOf("img/") + 4;
+
+      output = [srcString.slice(0, n), folder, srcString.slice(n)].join("");
+
+      $(imgArray[i]).attr("src", output);
+    }
+  }
+}
+
+function injectImgFolder() {
+  var
+    windowWidth = window.innerWidth,
+    mobile = 414,
+    tablet = 767
+  ;
+
+  if (windowWidth > mobile && windowWidth <= tablet) {
+    folder = "tablet/";
+
+    createImgFolderOutput();
+  } else if (windowWidth > tablet) {
+    folder = "desktop/";
+
+    createImgFolderOutput();
+  } else {
+    folder = "";
+
+    createImgFolderOutput();
+  }
+}
+
+injectImgFolder();</code></pre>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <h2><span>Toggle</span>Sub Menu</h2>
+                  <div class="col-4-12 offset-2-12">
+                    <figure>
+                      <img src="../../img/cetacea-sub-nav-closed.png" alt="cetacea sub-menu navigation toggled open">
+                    </figure>
+                  </div>
+                  <div class="col-4-12 offset-1-12">
+                    <figure>
+                      <img src="../../img/cetacea-sub-nav-open.png" alt="cetacea sub-menu navigation toggled open">
+                    </figure>
+                  </div>
+                  <div class="col-1-12"></div>
+                </div>
+
+                <div class="grid">
+                  <div class="col-8-12 offset-2-12">
+<pre><code>// main.js
+
+$(".drawer-menu").click(function() {
+  $(".drawer-menu ul").slideToggle(100, function() {
+    var
+      chevron = $(".sub-menu-btn img").attr("src"),
+      chevronSlice = chevron.slice(-6)
+    ;
+
+    if (chevronSlice === "up.svg") {
+      chevron = chevron.replace(chevronSlice, "dn.svg");
+      $(".sub-menu-btn img").attr("src", chevron);
+    } else {
+      chevron = chevron.replace(chevronSlice, "up.svg");
+      $(".sub-menu-btn img").attr("src", chevron);
+    }
+  });
+});
+
+// submenu sticks to screen bottom when above footer
+function subMenuStick() {
+  var
+    scrollPosition = window.pageYOffset,
+    scrollHeight = document.body.scrollHeight,
+    screenHeight = window.innerHeight,
+    footerHeight = $("footer").height(),
+    stopHeight = scrollHeight - screenHeight - footerHeight
+  ;
+
+  if (scrollPosition > stopHeight) {
+    $(".drawer-menu").css("position", "relative");
+  } else {
+    $(".drawer-menu").css("position", "fixed");
+  }
+};
+
+// initialize scroll functions
+window.onscroll = function() {
+  if (menuStatus === false) {
+    subMenuStick();
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <h2><span>PHP</span>Left Navigation</h2>
+                  <div class="col-6-12 offset-2-12">
+                    <figure>
+                      <img src="../../img/cetacea-left-nav.png" alt="cetacea left nav links">
+                    </figure>
+                  </div>
+                  <div class="col-8-12 offset-2-12">
+
+<pre><code>// astronaut-left-nav.php
+
+&lt;?php
+  function set_leftnav_path($folder) {
+    $class = 'left-nav-active';
+    $path_URL = $_SERVER['REQUEST_URI'];
+    $astronaut_path = $GLOBALS['siteroot'] . '/astronaut';
+    $full_path = $astronaut_path . $folder;
+    if ($path_URL == $full_path) {
+      echo 'class = "' . $class . '"' . ' ' . 'href ="' . $full_path . '"';
+    } elseif (strpos($path_URL, $folder)) {
+      echo 'class = "' . $class . '"' . ' ' . 'href ="' . $full_path . '"';
+    } else {
+      echo 'href ="' . $full_path . '"';
+    }
+  }
+?&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </main>
+
+        <footer>
+          <div>
+            <h2>Get In Touch</h2>
+            <ul>
+              <li><a href="mailto:rj@rjgoetz.com">rj@rjgoetz.com</a>&nbsp;&sdot;</li>
+              <li><a target="_blank" href="http://www.linkedin.com/in/robertjamesgoetz">LinkedIn</a>&nbsp;&sdot;</li>
+              <li><a target="_blank" href="https://github.com/rjgoetz">Github</a>&nbsp;&sdot;</li>
+              <li><a target="_blank" href="https://www.instagram.com/ectoc00ler">Instagram</a></li>
+            </ul>
+          </div>
+          <p>Website design, development, and content &copy; 2016 RJ Goetz</p>
+        </footer>
+
+        <script src="../../js/main.js"></script>
+    </body>
+</html>
