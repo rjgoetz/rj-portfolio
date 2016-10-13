@@ -1,0 +1,140 @@
+// // // // // // // // // // //
+// RJ Portfolio Site: Tablet //
+// // // // // // // // // //
+
+@media screen and (min-width: 768px) {
+
+  // // // // // //
+  // grid classes
+  div[class*="col-"] {
+    float: left;
+  }
+
+  div[class*="col-"] {
+    padding-right: 24/768*100%;
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  .col-1-12 {
+    width: 1/12*100%;
+  }
+
+  .col-2-12 {
+    width: 2/12*100%;
+  }
+
+  .col-3-12 {
+    width: 3/12*100%;
+  }
+
+  .col-4-12 {
+    width: 4/12*100%;
+  }
+
+  .col-5-12 {
+    width: 5/12*100%;
+  }
+
+  .col-6-12 {
+    width: 6/12*100%;
+  }
+
+  .col-7-12 {
+    width: 7/12*100%;
+  }
+
+  .col-8-12 {
+    width: 8/12*100%;
+  }
+
+  .offset-1-12 {
+    margin-left: 1/12*100%;
+  }
+
+  .offset-2-12 {
+    margin-left: 2/12*100%;
+  }
+
+
+  // // // // // // // // // // // // //
+  // global elements and helper classes
+  body {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .no-pad {
+    margin: 0;
+  }
+
+
+  // // // // // // // //
+  // main page elements
+  article, .blue-article {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blue-article {
+    h1 {
+      text-align: center;
+    }
+  }
+
+
+  // // // // // // // // // // //
+  // home page specific classes
+  .portfolio-item {
+    margin-left: 24/320*100%;
+    margin-right: 24/320*100%;
+  }
+
+
+  // // // // // // // // // // //
+  // about page specific classes
+  .about-headline {
+    position: relative;
+    h1 {
+      display: block;
+      font-size: 1.75rem;
+      left: 45%;
+      line-height: 1.2;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14em;
+    }
+  }
+
+  .sunset {
+    height: 16em;
+  }
+
+
+  // // // // // // // // // // //
+  // portfolio page specific classes
+  .code {
+    pre {
+      max-height: 350px;
+    }
+    figure[class*="retina"] {
+      width: 100%;
+    }
+  }
+
+  .github {
+    width: 10%;
+  }
+
+  .hero-mobile {
+    display: none;
+  }
+
+  .hero-desktop {
+    display: block;
+    padding: 0 24/768*100%;
+  }
+
+}

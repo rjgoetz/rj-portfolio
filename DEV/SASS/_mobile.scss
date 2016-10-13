@@ -1,0 +1,278 @@
+// // // // // // // // // // //
+// RJ Portfolio Site: Mobile //
+// // // // // // // // // //
+
+
+// // // // // // // // // // // // //
+// global elements and helper classes
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $lt-green;
+  font: normal 16px/1.5 $raleway;
+  padding: 0 24/320*100%;
+}
+
+h1, h2, p, ul, figure {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+h1, h2 {
+  color: $blue;
+}
+
+h1 {
+  font-family: $josefin;
+  font-size: 2em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.125em;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+ul {
+  padding: 0;
+  li {
+    list-style-type: square;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+pre {
+  margin-bottom: 3em;
+  padding: 0.75em;
+  text-align: left;
+}
+
+code {
+  color: $black;
+  font-family: $code;
+  font-size: 0.75em;
+}
+
+header, article {
+  padding: 3em 0 1.5em;
+}
+
+header, footer {
+  color: $blue;
+  text-align: center;
+}
+
+.grid {
+  @extend .clearfix;
+}
+
+.no-pad {
+  margin-left: -24/272*100%;
+  margin-right: -24/272*100%;
+}
+
+.block-italic {
+  display: block;
+  font-style: italic;
+}
+// end global elements and helper classes
+
+
+// // // // // // // //
+// main page elements
+header {
+  a {
+    h1 {
+      border: 3px solid $blue;
+      display: inline-block;
+      font-size: 4em;
+      margin-bottom: 3rem;
+      padding: 0.25em;
+      padding-bottom: 0.15em;
+    }
+    &:hover, &:active {
+      h1 {
+        border: 3px solid $orange;
+      }
+    }
+  }
+  p {
+    margin-bottom: 2.8em;
+  }
+  nav {
+    ul {
+      li {
+        display: inline-block;
+        a {
+          color: $blue;
+          display: block;
+          font-family: $josefin;
+          font-size: 1.5em;
+          font-weight: bold;
+          line-height: 1;
+          padding-bottom: 0.35em;
+          &:hover {
+            border-bottom: 3px solid $orange;
+          }
+        }
+        .nav-active {
+          border-bottom: 3px solid $orange;
+        }
+        &:first-of-type {
+          margin-right: 3em;
+        }
+      }
+    }
+  }
+}
+
+article {
+  background-color: $white;
+  padding-left: 24/320*100%;
+  padding-right: 24/320*100%;
+  h2, h3 {
+    margin-bottom: 0;
+  }
+  ul {
+    font-size: 0.875em;
+    line-height: 24/14*1em;
+    li {
+      list-style-type: square;
+    }
+  }
+  a {
+    color: $orange;
+    &:hover, &:active {
+      color: $dk-green;
+    }
+  }
+}
+
+.blue-article {
+  background-color: $blue;
+  color: $white;
+  h1 {
+    color: $white;
+  }
+  h2 {
+    color: $orange;
+  }
+}
+
+footer {
+  padding-top: 3em;
+  ul, p {
+    font-size: 0.875em;
+    line-height: 24/14*1em;
+  }
+  ul {
+    li {
+      display: inline-block;
+      a {
+        color: $blue;
+        padding: 0 0.25em;
+        &:hover, &:active {
+          color: $dk-green;
+        }
+      }
+    }
+  }
+}
+
+
+// // // // // // // // // // //
+// home page specific classes
+.portfolio-item {
+  margin-bottom: 3em;
+  padding-left: 24/320*100%;
+  padding-right: 24/320*100%;
+  text-align: center;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
+  -moz-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
+  box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
+  img {
+    margin: 0 auto 3em;
+    width: 45%;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+// // // // // // // // // // //
+// about page specific classes
+.about-headline {
+  h1 {
+    display: none;
+  }
+}
+
+.sunset {
+  background: url('../img/sunset.jpg') no-repeat left center;
+  background-size: cover;
+  height: 8em;
+}
+
+
+// // // // // // // // // // //
+// portfolio page specific classes
+.code {
+  text-align: center;
+  h2 {
+    margin-bottom: 1.5em;
+    span {
+      display: block;
+      font-family: $josefin;
+      font-size: 2.5em;
+    }
+  }
+  img {
+    margin-bottom: 1.5em;
+  }
+  pre {
+    background-color: $lt-grey;
+    border: 1px solid $white;
+    border-radius: 4px;
+    scroll-x: auto;
+  }
+  .retina-1x {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  .retina-2x {
+    @extend .retina-1x;
+    width: 60%;
+  }
+  .retina-3x {
+    @extend .retina-1x;
+    width: 80%;
+  }
+}
+
+.github {
+  display: block;
+  margin: 0 auto 1.5em;
+  width: 25%;
+}
+
+.hero-desktop {
+  display: none;
+}

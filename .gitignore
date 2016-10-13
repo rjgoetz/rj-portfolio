@@ -1,4 +1,3 @@
-*.scss
 .sass-cache/**
 *.map
 PUBLIC/doc/**
