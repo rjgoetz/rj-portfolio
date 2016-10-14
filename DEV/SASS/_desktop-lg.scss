@@ -1,0 +1,88 @@
+// // // // // // // // // // // // // //
+// RJ Portfolio Site: Desktop - Large //
+// // // // // // // // // // // // //
+
+@media screen and (min-width: 1366px) {
+
+  // // // // // //
+  // grid classes
+  div[class*="col-lg"] {
+    float: left;
+  }
+
+  div[class*="col-lg"] {
+    padding-right: 24/768*100%;
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  div .col-lg-2 {
+    padding-left: 24/768*100%;
+    padding-right: 0;
+    width: 2/12*100%;
+  }
+
+  .col-lg-9 {
+    width: 9/12*100%;
+  }
+
+  .col-lg-11 {
+    width: 11/12*100%;
+  }
+
+  .offset-lg-1 {
+    margin-left: 1/12*100%;
+  }
+
+
+  // // // // // // // // // // // // //
+  // global elements and helper classes
+  main {
+    margin-top: 1.5em;
+  }
+
+
+  // // // // // // // //
+  // main page elements
+  header {
+    padding: 4.5em 0 0;
+    text-align: center;
+    div[class*="col-"] {
+      float: none;
+      margin-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+    p {
+      font-size: 0.875em;
+      line-height: 24/14*1em;
+      margin: 0 -1.5em;
+
+    }
+    nav {
+      ul {
+        text-align: center;
+        li {
+          display: block;
+          height: 2.5em;
+          a {
+            margin: auto;
+            width: 3.5em;
+          }
+          &:first-of-type {
+            margin-bottom: 1.5rem;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    font-size: 0.875em;
+    line-height: 24/14*1em;
+    padding-top: 6em;
+  }
+
+} // end media query

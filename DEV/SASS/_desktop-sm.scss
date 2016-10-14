@@ -1,0 +1,112 @@
+// // // // // // // // // // // // // //
+// RJ Portfolio Site: Desktop - Small //
+// // // // // // // // // // // // //
+
+@media screen and (min-width: 1100px) {
+
+  // // // // // //
+  // grid classes
+  div[class*="col-md"] {
+    float: left;
+  }
+
+  div[class*="col-md"] {
+    padding-right: 24/768*100%;
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  .col-md-1 {
+    width: 1/12*100%;
+  }
+
+  .col-md-2 {
+    width: 2/12*100%;
+  }
+
+  .col-md-4 {
+    width: 4/12*100%;
+  }
+
+  .col-md-3 {
+    width: 3/12*100%;
+  }
+
+  .col-md-5 {
+    width: 5/12*100%;
+  }
+
+  .col-md-6 {
+    width: 6/12*100%;
+  }
+
+  .col-md-10 {
+    width: 10/12*100%;
+  }
+
+  .offset-md-1 {
+    margin-left: 1/12*100%;
+  }
+
+  .offset-md-2 {
+    margin-left: 2/12*100%;
+  }
+
+  .offset-md-3 {
+    margin-left: 3/12*100%;
+  }
+
+
+  // // // // // // // // // // // // //
+  // global elements and helper classes
+  header {
+    padding: 4.5em 1/24*100% 1.5em;
+  }
+
+
+  // // // // // // // //
+  // main page elements
+  header {
+    p {
+      margin-top: 3em;
+    }
+    ul {
+      margin-top: 3em;
+      text-align: right;
+    }
+  }
+
+  footer {
+    text-align: left;
+    p {
+      text-align: right;
+    }
+  }
+  
+
+  // // // // // // // // // // //
+  // home page specific classes
+  .portfolio-item {
+    margin: 0 0 3em;
+    padding: 3em 1/24*100%;
+    position: relative;
+    img {
+      margin: 0;
+      width: 100%;
+    }
+    h1, p {
+      text-align: left;
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+    .portfolio-copy {
+      padding-left: 1/24*100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+} // end media query

@@ -38,7 +38,6 @@ h2 {
 
 h3 {
   font-size: 1em;
-  font-weight: normal;
 }
 
 ul {
@@ -105,6 +104,7 @@ header {
       margin-bottom: 3rem;
       padding: 0.25em;
       padding-bottom: 0.15em;
+      width: 128.953px;
     }
     &:hover, &:active {
       h1 {
@@ -148,13 +148,6 @@ article {
   padding-right: 24/320*100%;
   h2, h3 {
     margin-bottom: 0;
-  }
-  ul {
-    font-size: 0.875em;
-    line-height: 24/14*1em;
-    li {
-      list-style-type: square;
-    }
   }
   a {
     color: $orange;
@@ -210,9 +203,10 @@ footer {
     margin: 0 auto 3em;
     width: 45%;
   }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+}
+
+main > div:last-of-type .portfolio-item {
+  margin-bottom: 0;
 }
 
 
@@ -268,11 +262,22 @@ footer {
 }
 
 .github {
+  background: url('../img/github-logo.png') no-repeat center center;
+  background-size: contain;
+  clear: both;
   display: block;
+  height: 3em;
   margin: 0 auto 1.5em;
-  width: 25%;
+  &:hover, &:visited {
+    background-image: url('../img/github-logo-active.png');
+  }
 }
 
 .hero-desktop {
   display: none;
+}
+
+.blue {
+  background-color: $blue;
+  margin-bottom: 1.5em;
 }
