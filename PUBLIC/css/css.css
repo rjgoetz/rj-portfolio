@@ -799,6 +799,9 @@ main > div:last-of-type .portfolio-item {
   .offset-sm-2 {
     margin-left: 16.66667%; }
 
+  .offset-sm-3 {
+    margin-left: 25%; }
+
   body {
     font-size: 18px;
     padding: 0; }

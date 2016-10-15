@@ -1,0 +1,685 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Harold's Photo Album | Web Developer Portfolio of RJ Goetz</title>
+        <meta name="description" content="Building a dynamic, single-page application.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Raleway:400,700|Source+Code+Pro:500" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/css.css">
+        <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="grid">
+          <!-- desktop-lg left column -->
+          <div class="col-lg-2">
+            <header>
+              <div class="grid">
+                <div class="col-md-2">
+                  <a href="../"><h1>R.J.</h1></a>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                  <p>R.J. Goetz is a Web Developer based in Minneapolis, MN</p>
+                </div>
+                <div class="col-md-3">
+                  <nav>
+                    <ul>
+                      <li><a class="nav-active" href="../">Portfolio</a></li>
+                      <li><a href="../about">About</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </header>
+          </div>
+          <!-- end desktop-lg left column -->
+
+          <!-- desktop-lg right column -->
+          <div class="col-lg-9">
+            <div class="grid">
+              <div class="col-lg-11 offset-lg-1">
+                <main>
+                  <img class="hero-desktop" src="../../img/harolds-imac-tilt-iphone.jpg" alt="harold's photo albume on iMac&reg; iPhone&reg;">
+                  <img class="hero-mobile" src="../../img/harolds-iphone-main.png" alt="harold's photo album on iPhone&reg;">
+
+                  <div class="no-pad">
+                    <article>
+                      <div class="grid">
+                        <div class="col-sm-7 offset-sm-2 offset-md-3">
+                          <h1>Harold's Photo Album</h1>
+
+                          <p>For my final project in MCAD's <i>Responsive Design</i> class with Robert Algeo, I designed and developed a photo album featuring my son Harold. In addition to developing a mobile-first design, we were also tasked to learn and deploy a new technology in the project. I chose to learn AJAX and JSON because my goal for the site was to dynamically render the photos based on user-selected filters without page reload.</p>
+
+                          <p><a href="http://rgoetz.studio.mcad.edu/responsive/week_15/harold/" target="_blank">Visit site.</a></p>
+
+                          <h2>Challenge</h2>
+                          <p>The biggest challenge for this project was developing a grid system that treated portrait and landscape photos differently. To achieve the desired album design, I developed a JavaScript-powered grid that calculates columns based on photo orientation.</p>
+                        </div>
+                      </div>
+
+                      <div class="grid">
+                        <div class="col-sm-3 offset-sm-2 offset-md-3">
+                          <div class="project-details">
+                            <h3>Project Goals</h3>
+                            <ul>
+                              <li>Mobile-first, responsive layout</li>
+                              <li>Single-page application utilizing AJAX and JSON</li>
+                              <li>User-selected filters based on photo tags</li>
+                              <li>JavaScript photo lightbox</li>
+                              <li>Modernizr fall-back for JavaScript disabled browsers</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-3 offset-sm-1">
+                          <div class="project-details">
+                            <h3>Technologies</h3>
+                            <ul>
+                              <li>HTML5</li>
+                              <li>CSS3, SASS</li>
+                              <li>JavaScript, jQuery</li>
+                              <li>AJAX</li>
+                              <li>JSON</li>
+                              <li>Modernizr</li>
+                              <li>Responsive Design</li>
+                              <li>Lazy Load images</li>
+                              <li>Git</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="blue-article code">
+                      <div class="grid">
+                        <div class="col-sm-8 offset-sm-2">
+                          <img src="../../img/harolds-imac-main.png" alt="Harold's photo album on iMac&reg;">
+                        </div>
+
+                        <a class="github" href="https://github.com/rjgoetz/SP16_IDM6660_Goetz_RJ/tree/master/week_15/PUBLIC" target="_blank"></a>
+                        <h1>Code Samples</h1>
+
+                        <div class="grid">
+                          <h2><span>Filters &amp; AJAX</span>Dynamic Photos</h2>
+
+                          <div class="col-sm-6 offset-sm-3">
+                            <figure>
+                              <img src="../../img/harolds-ipad-filters.png" alt="Harold's filter options">
+                            </figure>
+                          </div>
+
+                        <div class="grid">
+                          <div class="col-sm-8 offset-sm-2">
+        <pre><code>// main.js
+
+// // // // // // // // // // // // // // //
+// Get Data From JSON and Insert Into DOM
+
+// getJSON global stores
+var
+  output = "",
+  filter = ""
+;
+
+// Create Output
+function createData(insert) {
+
+  output += "&lt;div class='" + insert.layout + "'&gt;";
+  output += "&lt;img class='lazy' data-original='" + insert.src + "-thb.jpg" + "'&gt;";
+  output += "&lt;figure&gt;";
+  output += "&lt;figcaption&gt;" + insert.name + "&lt;/figcaption&gt;";
+  output += "&lt;/figure&gt;";
+  output += "&lt;/div&gt;";
+
+};
+
+// Set filter value
+function getFilter() {
+  filter = $("input[name='filter']:checked").val();
+};
+
+// Check tags in JSON
+function checkFilter(dataToCheck) {
+
+  for (var i = 0; i < dataToCheck.tags.length; i++) {
+    if (dataToCheck.tags[i] === filter) {
+      return true;
+
+      break;
+    }
+  };
+
+};
+
+// check for last in row by looping through photos
+function checkLastInRow() {
+  if (mobile === false) {
+      var pictures = $("section div");
+
+      for (var i = 1; i < pictures.length; i++) {
+        var
+          prevItemRect = pictures[i-1].getBoundingClientRect(),
+          prevItemMargin = pictures[i-1].style.marginRight,
+          currItemRect = pictures[i].getBoundingClientRect(),
+          currItemWidth = currItemRect.right - currItemRect.left,
+          totalWidth = prevItemRect.right + currItemWidth + gutter
+        ;
+
+        console.log(windowWidth);
+
+        // recalibrate previous item right position for viewport widths greater than page width
+        if (windowWidth > 1600) {
+          totalWidth -= ((windowWidth - 1600) / 2);
+          if (totalWidth > .96 * maxWidth && totalWidth <= maxWidth) {
+            pictures[i].setAttribute("style", "margin-right:0");
+          }
+        } else if (totalWidth > .96 * windowWidth && totalWidth <= windowWidth) {
+          pictures[i].setAttribute("style", "margin-right:0");
+        };
+
+        // total width of items in row
+        console.log(i + " " + totalWidth);
+
+        // clear float if previous item has margin-right 0px property
+        if(prevItemMargin === "0px") {
+          pictures[i].setAttribute("style", "clear: both");
+        };
+
+      }
+
+  };
+};
+
+// listen for menu radio button click
+
+$("nav").on("click", "input[name=filter]", function() {
+
+  getData();
+
+});
+
+// get data from JSON file and output to DOM
+function getData() {
+
+  // get initial filter setting
+  getFilter();
+
+  setHeaderFilter();
+
+  // reset output
+  output = "";
+
+  $.getJSON("data.json", function(data) {
+    imgLoadArray = [];
+
+    $.each(data, function(index, value) {
+
+      if (filter === "all") {
+        createData(data[index]);
+      } else {
+        if (checkFilter(data[index])) {
+          createData(data[index]);
+        }
+      }
+
+    });
+
+    $("section").html(output);
+
+    if (mobile === true) {
+      sizeImgBlock();
+    } else {
+      checkLastInRow();
+    }
+
+    // lazy load images
+    $("img.lazy").lazyload({
+      effect: "fadeIn"
+    });
+
+  });
+
+};</code></pre>
+                          </div>
+                        </div>
+
+                        <div class="grid">
+                          <h2><span>JSON</span>Data Store</h2>
+                          <div class="col-sm-4 offset-sm-2">
+                            <figure>
+                              <img src="../../img/harolds-iphone-photos-all.png" alt="Harold's Photo Album select all photos">
+                            </figure>
+                          </div>
+                          <div class="col-sm-4 offset-sm-1">
+                            <figure>
+                              <img src="../../img/harolds-iphone-photos-sleeping.png" alt="Harold's Photo Album select sleeping photos">
+                            </figure>
+                          </div>
+                          <div class="col-sm-1"></div>
+                        </div>
+
+                        <div class="grid">
+                          <div class="col-sm-8 offset-sm-2">
+        <pre><code>// data.json
+
+[
+  {
+    "name" : "Harold's Birthday - October 27, 2014",
+    "photoDate" : "2014-10-27",
+    "tags" : ["birthday", "sleeping"],
+    "src" : "img/harold1",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Car Ride",
+    "photoDate" : "2014-10-30",
+    "tags" : ["milestone", "sleeping"],
+    "src" : "img/harold2",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Morning at Home",
+    "photoDate" : "2014-10-31",
+    "tags" : ["milestone"],
+    "src" : "img/harold3",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "On the Couch with Mom",
+    "photoDate" : "2014-11-01",
+    "tags" : ["mom"],
+    "src" : "img/harold6",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold's Baptism",
+    "photoDate" : "2014-11-06",
+    "tags" : ["mom", "dad", "milestone"],
+    "src" : "img/harold8",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Matching Beanies",
+    "photoDate" : "2014-11-27",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold16",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Harold with Grandpa Goetz",
+    "photoDate" : "2014-11-27",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold17",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "1 Month Old",
+    "photoDate" : "2014-11-29",
+    "tags" : ["milestone"],
+    "src" : "img/harold18",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Four Generations",
+    "photoDate" : "2014-11-29",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold19",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold and Uncle David",
+    "photoDate" : "2014-11-30",
+    "tags" : ["family"],
+    "src" : "img/harold20",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Christmas and Grandpa Miller",
+    "photoDate" : "2014-12-25",
+    "tags" : ["family", "milestone"],
+    "src" : "img/harold21",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Visiting the Fischer's",
+    "photoDate" : "2014-12-20",
+    "tags" : ["friends"],
+    "src" : "img/harold22",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Harold and Grandma Miller",
+    "photoDate" : "2014-12-18",
+    "tags" : ["family"],
+    "src" : "img/harold23",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Mom and Harold",
+    "photoDate" : "2015-01-04",
+    "tags" : ["mom", "sleeping"],
+    "src" : "img/harold26",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Dreaded Tummy Time",
+    "photoDate" : "2015-01-17",
+    "tags" : ["milestone"],
+    "src" : "img/harold24",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Smile",
+    "photoDate" : "2015-01-11",
+    "tags" : ["milestone", "smiling"],
+    "src" : "img/harold25",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Playing with a Ball",
+    "photoDate" : "2015-02-22",
+    "tags" : ["playing"],
+    "src" : "img/harold27",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Playing In My Saucer",
+    "photoDate" : "2015-02-25",
+    "tags" : ["playing"],
+    "src" : "img/harold28",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Grabbing My Feet",
+    "photoDate" : "2015-03-17",
+    "tags" : ["playing"],
+    "src" : "img/harold29",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "In My Bouncer",
+    "photoDate" : "2015-03-31",
+    "tags" : ["playing", "smiling"],
+    "src" : "img/harold30",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold and Dad",
+    "photoDate" : "2015-04-15",
+    "tags" : ["dad", "smiling"],
+    "src" : "img/harold31",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Easter with My Family",
+    "photoDate" : "2015-04-05",
+    "tags" : ["family", "mom"],
+    "src" : "img/harold32",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Shopping with Mom",
+    "photoDate" : "2015-04-21",
+    "tags" : ["smiling", "sitting"],
+    "src" : "img/harold33",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "With Mom in Dubuque",
+    "photoDate" : "2015-04-18",
+    "tags" : ["mom"],
+    "src" : "img/harold34",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Crashing Out",
+    "photoDate" : "2015-04-21",
+    "tags" : ["sleeping"],
+    "src" : "img/harold35",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Sitting Up and Eating",
+    "photoDate" : "2015-04-23",
+    "tags" : ["eating"],
+    "src" : "img/harold36",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Cuteness Overload",
+    "photoDate" : "2015-04-23",
+    "tags" : ["smiling"],
+    "src" : "img/harold37",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Too Big For My Basket",
+    "photoDate" : "2015-06-14",
+    "tags" : ["milestone"],
+    "src" : "img/harold38",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Future Programmer",
+    "photoDate" : "2015-06-16",
+    "tags" : ["playing"],
+    "src" : "img/harold39",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Swim",
+    "photoDate" : "2015-06-21",
+    "tags" : ["milestone", "playing"],
+    "src" : "img/harold40",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "4th of July Boating",
+    "photoDate" : "2015-07-03",
+    "tags" : ["dad"],
+    "src" : "img/harold41",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Dapper with Mom",
+    "photoDate" : "2015-07-10",
+    "tags" : ["mom"],
+    "src" : "img/harold42",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Hanging Out With Dad",
+    "photoDate" : "2015-07-12",
+    "tags" : ["dad"],
+    "src" : "img/harold43",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Sailing the Seas!",
+    "photoDate" : "2015-07-18",
+    "tags" : ["mom"],
+    "src" : "img/harold44",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Loving the Sand",
+    "photoDate" : "2015-07-18",
+    "tags" : ["smiling", "playing"],
+    "src" : "img/harold45",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Slide Time",
+    "photoDate" : "2015-07-30",
+    "tags" : ["playing", "mom"],
+    "src" : "img/harold46",
+    "layout" : "portrait"
+  }
+]</code></pre>
+                          </div>
+                        </div>
+
+                        <div class="grid">
+                          <h2><span>Lightbox</span>with Navigation</h2>
+                          <div class="col-sm-8 offset-sm-2">
+                            <figure>
+                              <img src="../../img/harolds-lightbox.png" alt="Harold's Photo Album lightbox">
+                            </figure>
+                          </div>
+                          <div class="col-sm-8 offset-sm-2">
+
+        <pre><code>// main.js
+
+// // // // // // // // // // //
+// Lightbox
+
+var
+  boxOutput = "",
+  url = "",
+  captionArray = [],
+  capTextArray =[],
+  captionText,
+  figCaption,
+  boxHeight,
+  imgHeight,
+  imgIndex,
+  photosArray,
+  topPosition
+;
+
+function lightbox() {
+
+  boxOutput += "&lt;div class='lightbox'&gt;";
+  boxOutput += "&lt;i class='fa fa-times'&gt;&lt;/i&gt;"
+  boxOutput += "&lt;img src='" + url + "'&gt;";
+
+  boxOutput += "&lt;div class='lightbox-nav'&gt;";
+  boxOutput += "&lt;i class='fa fa-chevron-left'&gt;&lt;/i&gt;";
+  boxOutput += "&lt;i class='fa fa-chevron-right'&gt;&lt;/i&gt;";
+  boxOutput += "&lt;/div&gt;";
+
+  boxOutput += "&lt;figure&gt;";
+  boxOutput += "&lt;figcaption&gt;" + captionText + "&lt;/figcaption&gt;";
+  boxOutput += "&lt;/figure&gt;";
+
+  boxOutput += "&lt;/div&gt;";
+
+  $(boxOutput).prependTo("body");
+
+};
+
+function imgLocation() {
+
+  var urlArray = [];
+
+  for (var i = 0; i < photosArray.length; i++) {
+    var tempURL = $(photosArray[i]).attr("data-original");
+    tempURL = tempURL.substring(0, (tempURL.length - 8)) + ".jpg";
+    urlArray.push(tempURL);
+  }
+
+  imgIndex = $.inArray(url, urlArray);
+
+};
+
+
+// initiate lightbox after ajax loads
+$(document).ajaxComplete(function() {
+  $("section div").on("click", "img", function() {
+
+    fullUrl = $(this).attr("data-original");
+    url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
+    figCaption = $(this).next();
+    captionText = figCaption.text();
+    photosArray = $("section div img");
+    captionArray = $("section div figcaption");
+
+    imgLocation();
+    lightbox();
+
+  })
+
+});
+
+// remove picture from DOM by clicking close icon
+
+$("body").on("click", ".lightbox .fa-times", function() {
+  $(".lightbox").remove();
+  boxOutput = "";
+});
+
+// navigate to next photo
+
+$("body").on("click", ".lightbox .fa-chevron-right", function() {
+  $(".lightbox").remove();
+  boxOutput = "";
+  if (imgIndex < (photosArray.length - 1)) {
+    fullUrl = $(photosArray[imgIndex + 1]).attr("data-original");
+    url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
+    captionText = $(captionArray[imgIndex + 1]).text();
+    imgLocation();
+    lightbox();
+    boxPosition();
+  }
+
+});
+
+// navigate to previous photo
+
+$("body").on("click", ".lightbox .fa-chevron-left", function() {
+  $(".lightbox").remove();
+  boxOutput = "";
+
+  if (imgIndex > 0) {
+    fullUrl = $(photosArray[imgIndex - 1]).attr("data-original");
+    url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
+    captionText = $(captionArray[imgIndex - 1]).text();
+    imgLocation();
+    lightbox();
+    boxPosition();
+  }
+
+});</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </main>
+              </div>
+            </div>
+
+            <footer>
+              <div class="grid">
+                <div class="col-md-5 offset-md-1">
+                  <h2>Get In Touch</h2>
+                </div>
+              </div>
+
+              <div class="grid">
+                <div class="col-md-5 offset-md-1">
+                  <ul>
+                    <li><a href="mailto:rj@rjgoetz.com">rj@rjgoetz.com</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="http://www.linkedin.com/in/robertjamesgoetz">LinkedIn</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="https://github.com/rjgoetz">Github</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="https://www.instagram.com/ectoc00ler">Instagram</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-5 offset-lg-1">
+                  <p>Website design, development, and content &copy; 2016 RJ Goetz</p>
+                </div>
+              </div>
+            </footer>
+          </div>
+          <!-- end desktop-lg right column -->
+        </div>
+
+    </body>
+</html>
