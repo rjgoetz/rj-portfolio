@@ -164,7 +164,7 @@ article {
     color: $white;
   }
   h2 {
-    color: $orange;
+    color: $yellow;
   }
 }
 
@@ -199,9 +199,20 @@ footer {
   -webkit-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
   -moz-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
   box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
-  img {
+  .portfolio-logo {
+    display: block;
     margin: 0 auto 3em;
-    width: 45%;
+    width: 60%;
+  }
+  .portfolio-copy {
+    h1 {
+      a {
+        color: $blue;
+        &:hover {
+          color: $dk-green;
+        }
+      }
+    }
   }
 }
 
@@ -230,12 +241,7 @@ main > div:last-of-type .portfolio-item {
 .code {
   text-align: center;
   h2 {
-    margin-bottom: 1.5em;
-    span {
-      display: block;
-      font-family: $josefin;
-      font-size: 2.5em;
-    }
+    margin: 3em 0 1.5em;
   }
   img {
     margin-bottom: 1.5em;
@@ -262,14 +268,14 @@ main > div:last-of-type .portfolio-item {
 }
 
 .github {
-  background: url('../img/github-logo.png') no-repeat center center;
+  background: url('../img/github-logo-active.png') no-repeat center center;
   background-size: contain;
   clear: both;
   display: block;
   height: 3em;
   margin: 0 auto 1.5em;
   &:hover, &:visited {
-    background-image: url('../img/github-logo-active.png');
+    background-image: url('../img/github-logo.png');
   }
 }
 

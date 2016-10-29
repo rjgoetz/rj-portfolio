@@ -1,0 +1,322 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>New Horizons Journey to Pluto | Web Developer Portfolio of RJ Goetz</title>
+        <meta name="description" content="Creating a mobile-first, responsive website.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Raleway:400,700|Source+Code+Pro:500" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/css.css">
+        <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="grid">
+          <!-- desktop-lg left column -->
+          <div class="col-lg-2">
+            <header>
+              <div class="grid">
+                <div class="col-md-2">
+                  <a href="../"><h1>R.J.</h1></a>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                  <p>R.J. Goetz is a Web Developer based in Minneapolis, MN</p>
+                </div>
+                <div class="col-md-3">
+                  <nav>
+                    <ul>
+                      <li><a class="nav-active" href="../">Portfolio</a></li>
+                      <li><a href="../about">About</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </header>
+          </div>
+          <!-- end desktop-lg left column -->
+
+          <!-- desktop-lg right column -->
+          <div class="col-lg-9">
+            <div class="grid">
+              <div class="col-lg-11 offset-lg-1">
+                <main>
+                  <img class="hero-desktop" src="../../img/new-horizons-imac-iphone-main.jpg" alt="New Horizons website on iMac&reg; iPhone&reg;">
+                  <img class="hero-mobile" src="../../img/new-horizons-iphone-main.png" alt="New Horizons website on iPhone&reg;">
+
+                  <div class="no-pad">
+                    <article>
+                      <div class="grid">
+                        <div class="col-sm-7 offset-sm-2 offset-md-3">
+                          <h1>New Horizons Journey to Pluto</h1>
+
+                          <p>For my first major mobile-first, responsive interactive design project in MCAD's <i>Responsive Design</i> class with Robert Algeo, I designed and developed a website commerating the historic Pluto flyby by NASA's New Horizons spacecraft. In addition, this project introduced me to Style Tiles, a design method for rapid prototyping.</p>
+
+                          <p><a href="http://rgoetz.studio.mcad.edu/responsive/new-horizons/" target="_blank">Visit site.</a></p>
+
+                          <h2>Style Tile</h2>
+                          <figure>
+                            <img src="../../img/new-horizons-style-tile.jpg" alt="New Horizons Style Tile">
+                          </figure>
+
+                        </div>
+                      </div>
+
+                      <div class="grid">
+                        <div class="col-sm-3 offset-sm-2 offset-md-3">
+                          <div class="project-details">
+                            <h3>Project Goals</h3>
+                            <ul>
+                              <li>Mobile-first, responsive layout</li>
+                              <li>Rapid design concepts with iterative Style Tiles</li>
+                              <li>Image lightbox</li>
+                              <li>Browser fall-back detection</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-3 offset-sm-1">
+                          <div class="project-details">
+                            <h3>Technologies</h3>
+                            <ul>
+                              <li>HTML5</li>
+                              <li>CSS3, SASS</li>
+                              <li>JavaScript, jQuery</li>
+                              <li>Modernizr</li>
+                              <li>Responsive Design</li>
+                              <li>Git</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="blue-article code">
+                      <div class="grid">
+                        <div class="col-sm-8 offset-sm-2">
+                          <img src="../../img/new-horizons-imac-main.png" alt="New Horizons website on iMac&reg;">
+                        </div>
+
+                        <a class="github" href="https://github.com/rjgoetz/SP16_IDM6660_Goetz_RJ/tree/master/week_09/PUBLIC" target="_blank"></a>
+                        <h1>Code Samples</h1>
+
+                        <div class="grid">
+                          <h2>Responsive Header with CSS / SASS</h2>
+
+                          <div class="col-sm-2 offset-sm-2">
+                            <figure>
+                              <img src="../../img/new-horizons-header-mobile.png" alt="New Horizons website header mobile view">
+                              <figcaption>
+                                Mobile View
+                              </figcaption>
+                            </figure>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <figure>
+                              <img src="../../img/new-horizons-header-tablet.png" alt="New Horizons website header tablet view">
+                              <figcaption>
+                                Tablet View
+                              </figcaption>
+                            </figure>
+                          </div>
+
+                          <div class="col-sm-4">
+                            <figure>
+                              <img src="../../img/new-horizons-header-desktop.png" alt="New Horizons website header desktop view">
+                              <figcaption>
+                                Desktop View
+                              </figcaption>
+                            </figure>
+                          </div>
+
+                        <div class="grid">
+                          <div class="col-sm-8 offset-sm-2">
+        <pre><code>// _mobile.scss
+
+.page {
+  background:
+     url("../images/nh-header-sm.png") no-repeat -280px -20px,
+     url("../images/stars-sm.png") repeat,
+    $blue;
+  nav {
+    display: none;
+  }
+  header {
+    nav {
+      display: block;
+    }
+  }
+  .top-button {
+    display: none;
+  }
+}
+
+// _tablet.scss
+
+@media screen and (min-width: 481px) {
+
+.page {
+    background:
+       url("../images/nh-header-md.png") no-repeat -240px -90px,
+       url("../images/stars-sm.png") repeat,
+      $blue;
+    header {
+      nav {
+        display: none;
+      }
+    }
+    nav {
+      display: block;
+      height: 38px;
+      box-shadow: 0 -1px 5px $dk-grey;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          float: left;
+          width: 50%;
+          text-align: center;
+          margin: 0;
+          background: linear-gradient($white, $lt-grey);
+          border-top: 2px solid $white;
+          a {
+            text-decoration: none;
+            height: 36px;
+            display: block;
+            width: 100%;
+            padding-top: 4px;
+            color: $blue;
+            &:hover {
+              color: $lt-blue;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      width: 150px;
+    }
+
+    &>div:last-of-type {
+      display: none;
+    }
+}
+
+@media screen and (min-width: 641px) {
+
+// _desktop.scss
+
+.page {
+    background:
+      url("../images/stars-md.png") repeat,
+      $blue;
+
+    .right {
+      width: 47.191887675507%;
+      float: right;
+      padding: 0 0 5.616224648986% 5.616224648986%;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .left {
+      width: 47.191887675507%;
+      float: left;
+    }
+    header {
+      padding-top: 3em;
+      background: url("../images/nh-bg-md.png") no-repeat right -110px;
+
+      h1 {
+        width: 58%;
+        text-align: right;
+        margin: 0;
+        a {
+          font-size: 6vmin;
+          span {
+            position: static;
+            font-size: 3vmin;
+          }
+        }
+      }
+
+    }
+    nav {
+      box-shadow: none;
+      padding: 0 2.808112324493%;
+    }
+    section {
+      box-shadow: 0 3px 6px $dk-grey;
+      margin: 0 2.808112324493%;
+      padding: 3em;
+    }
+  }
+}</code></pre>
+                          </div>
+                        </div>
+
+                        <div class="grid">
+                          <h2>Magnific Popup Lightbox Plugin</h2>
+                          <div class="col-sm-8 offset-sm-2">
+                            <img src="../../img/new-horizons-imac-lightbox.png" alt="New Horizons lightbox on iMac&reg;">
+                          </div>
+                        </div>
+
+                        <div class="grid">
+                          <div class="col-sm-8 offset-sm-2">
+        <pre><code>// script.js
+
+$(".image-popup").magnificPopup({
+    type: "image",
+    closeOnContentClick: true
+  })
+
+// mission.html
+
+&lt;p&gt;&lt;a class="image-popup" href="images/nh-launch_960.jpg"&gt;&lt;img src="images/nh-launch_640.jpg" alt="New Horizons - Atlas Rocket Launch"&gt;&lt;/a&gt;&lt;/p&gt;
+
+</code></pre>
+                          </div>
+                        </div>
+
+                      </div>
+                    </article>
+                  </div>
+                </main>
+              </div>
+            </div>
+
+            <footer>
+              <div class="grid">
+                <div class="col-md-5 offset-md-1">
+                  <h2>Get In Touch</h2>
+                </div>
+              </div>
+
+              <div class="grid">
+                <div class="col-md-5 offset-md-1">
+                  <ul>
+                    <li><a href="mailto:rj@rjgoetz.com">rj@rjgoetz.com</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="http://www.linkedin.com/in/robertjamesgoetz">LinkedIn</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="https://github.com/rjgoetz">Github</a>&nbsp;&sdot;</li>
+                    <li><a target="_blank" href="https://www.instagram.com/ectoc00ler">Instagram</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-5 offset-lg-1">
+                  <p>Website design, development, and content &copy; 2016 RJ Goetz</p>
+                </div>
+              </div>
+            </footer>
+          </div>
+          <!-- end desktop-lg right column -->
+        </div>
+
+    </body>
+</html>

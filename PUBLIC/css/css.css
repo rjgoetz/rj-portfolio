@@ -681,7 +681,7 @@ article {
   .blue-article h1 {
     color: #ffffff; }
   .blue-article h2 {
-    color: #ff754c; }
+    color: #ffea8d; }
 
 footer {
   padding-top: 3em; }
@@ -704,9 +704,14 @@ footer {
   -webkit-box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3);
   -moz-box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3);
   box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3); }
-  .portfolio-item img {
+  .portfolio-item .portfolio-logo {
+    display: block;
     margin: 0 auto 3em;
-    width: 45%; }
+    width: 60%; }
+  .portfolio-item .portfolio-copy h1 a {
+    color: #2f3f69; }
+    .portfolio-item .portfolio-copy h1 a:hover {
+      color: #8a9488; }
 
 main > div:last-of-type .portfolio-item {
   margin-bottom: 0; }
@@ -722,11 +727,7 @@ main > div:last-of-type .portfolio-item {
 .code {
   text-align: center; }
   .code h2 {
-    margin-bottom: 1.5em; }
-    .code h2 span {
-      display: block;
-      font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 2.5em; }
+    margin: 3em 0 1.5em; }
   .code img {
     margin-bottom: 1.5em; }
   .code pre {
@@ -744,14 +745,14 @@ main > div:last-of-type .portfolio-item {
     width: 80%; }
 
 .github {
-  background: url("../img/github-logo.png") no-repeat center center;
+  background: url("../img/github-logo-active.png") no-repeat center center;
   background-size: contain;
   clear: both;
   display: block;
   height: 3em;
   margin: 0 auto 1.5em; }
   .github:hover, .github:visited {
-    background-image: url("../img/github-logo-active.png"); }
+    background-image: url("../img/github-logo.png"); }
 
 .hero-desktop {
   display: none; }
@@ -910,7 +911,7 @@ main > div:last-of-type .portfolio-item {
     margin: 0 0 3em;
     padding: 3em 4.16667%;
     position: relative; }
-    .portfolio-item img {
+    .portfolio-item .portfolio-logo {
       margin: 0;
       width: 100%; }
     .portfolio-item h1, .portfolio-item p {
