@@ -17,10 +17,14 @@
     }
   }
 
-  div .col-lg-2 {
+  .col-lg-2 {
     padding-left: 24/768*100%;
     padding-right: 0;
     width: 2/12*100%;
+  }
+
+  .col-lg-6 {
+    width: 6/12*100%;
   }
 
   .col-lg-9 {
@@ -33,6 +37,10 @@
 
   .offset-lg-1 {
     margin-left: 1/12*100%;
+  }
+
+  .offset-lg-3 {
+    margin-left: 3/12*100%;
   }
 
 
@@ -82,7 +90,8 @@
   footer {
     font-size: 0.875em;
     line-height: 24/14*1em;
-    padding-top: 6em;
+    margin-bottom: 1.5rem;
+    padding-top: 6rem;
   }
 
 } // end media query

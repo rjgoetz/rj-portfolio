@@ -11,10 +11,13 @@
   box-sizing: border-box;
 }
 
+html {
+  color: $black;
+}
+
 body {
-  background-color: $lt-green;
+  background-color: $smoke;
   font: normal 16px/1.5 $raleway;
-  padding: 0 24/320*100%;
 }
 
 h1, h2, p, ul, figure {
@@ -23,7 +26,7 @@ h1, h2, p, ul, figure {
 }
 
 h1, h2 {
-  color: $blue;
+  color: $teal;
 }
 
 h1 {
@@ -41,7 +44,7 @@ h3 {
 }
 
 ul {
-  padding: 0;
+  padding-left: 1.2em;
   li {
     list-style-type: square;
   }
@@ -57,7 +60,7 @@ img {
 }
 
 pre {
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
   padding: 0.75em;
   text-align: left;
 }
@@ -73,7 +76,6 @@ header, article {
 }
 
 header, footer {
-  color: $blue;
   text-align: center;
 }
 
@@ -81,16 +83,10 @@ header, footer {
   @extend .clearfix;
 }
 
-.no-pad {
-  margin-left: -24/272*100%;
-  margin-right: -24/272*100%;
-}
-
-.block-italic {
+.block-bold {
   display: block;
-  font-style: italic;
+  font-weight: bold;
 }
-// end global elements and helper classes
 
 
 // // // // // // // //
@@ -98,7 +94,8 @@ header, footer {
 header {
   a {
     h1 {
-      border: 3px solid $blue;
+      border: 3px solid $teal;
+      color: $teal;
       display: inline-block;
       font-size: 4em;
       margin-bottom: 3rem;
@@ -108,31 +105,32 @@ header {
     }
     &:hover, &:active {
       h1 {
-        border: 3px solid $orange;
+        border: 3px solid $coral;
       }
     }
   }
   p {
-    margin-bottom: 2.8em;
+    margin-bottom: 3em;
   }
   nav {
     ul {
+      padding-left: 0;
       li {
         display: inline-block;
         a {
-          color: $blue;
+          color: $teal;
           display: block;
           font-family: $josefin;
           font-size: 1.5em;
           font-weight: bold;
           line-height: 1;
-          padding-bottom: 0.35em;
+          padding-bottom: 0.15em;
           &:hover {
-            border-bottom: 3px solid $orange;
+            border-bottom: 3px solid $coral;
           }
         }
         .nav-active {
-          border-bottom: 3px solid $orange;
+          border-bottom: 3px solid $coral;
         }
         &:first-of-type {
           margin-right: 3em;
@@ -144,44 +142,37 @@ header {
 
 article {
   background-color: $white;
+  -webkit-box-shadow: 0 3px 6px rgba($black,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0 3px 6px rgba($black,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba($black,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 3em;
   padding-left: 24/320*100%;
   padding-right: 24/320*100%;
   h2, h3 {
     margin-bottom: 0;
   }
   a {
-    color: $orange;
+    color: $coral;
     &:hover, &:active {
-      color: $dk-green;
+      color: $teal;
     }
   }
 }
 
-.blue-article {
-  background-color: $blue;
-  color: $white;
-  h1 {
-    color: $white;
-  }
-  h2 {
-    color: $yellow;
-  }
-}
-
 footer {
-  padding-top: 3em;
   ul, p {
     font-size: 0.875em;
     line-height: 24/14*1em;
   }
   ul {
+    padding-left: 0;
     li {
       display: inline-block;
       a {
-        color: $blue;
+        color: $black;
         padding: 0 0.25em;
         &:hover, &:active {
-          color: $dk-green;
+          color: $coral;
         }
       }
     }
@@ -196,9 +187,6 @@ footer {
   padding-left: 24/320*100%;
   padding-right: 24/320*100%;
   text-align: center;
-  -webkit-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
-  -moz-box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
-  box-shadow: 4px 4px 5px 0px rgba($dk-green,0.3);
   .portfolio-logo {
     display: block;
     margin: 0 auto 3em;
@@ -207,17 +195,13 @@ footer {
   .portfolio-copy {
     h1 {
       a {
-        color: $blue;
+        color: $teal;
         &:hover {
-          color: $dk-green;
+          border-bottom: 3px solid $teal;
         }
       }
     }
   }
-}
-
-main > div:last-of-type .portfolio-item {
-  margin-bottom: 0;
 }
 
 
@@ -241,15 +225,17 @@ main > div:last-of-type .portfolio-item {
 .code {
   text-align: center;
   h2 {
-    margin: 3em 0 1.5em;
+    color: $black;
+    margin: 1.5em 0;
   }
   img {
     margin-bottom: 1.5em;
   }
   pre {
-    background-color: $lt-grey;
-    border: 1px solid $white;
-    border-radius: 4px;
+    background-color: $smoke;
+    -webkit-box-shadow: inset 0 3px 6px rgba($black,0.16);
+    -moz-box-shadow: inset 0 3px 6px rgba($black, 0.16);
+    box-shadow: inset 0 3px 6px rgba($black, 0.16);
     scroll-x: auto;
   }
   .retina-1x {
@@ -268,22 +254,17 @@ main > div:last-of-type .portfolio-item {
 }
 
 .github {
-  background: url('../img/github-logo-active.png') no-repeat center center;
+  background: url('../img/github-logo.png') no-repeat center center;
   background-size: contain;
   clear: both;
   display: block;
   height: 3em;
   margin: 0 auto 1.5em;
   &:hover, &:visited {
-    background-image: url('../img/github-logo.png');
+    background-image: url('../img/github-logo-active.png');
   }
 }
 
 .hero-desktop {
   display: none;
-}
-
-.blue {
-  background-color: $blue;
-  margin-bottom: 1.5em;
 }

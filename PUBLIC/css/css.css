@@ -575,17 +575,19 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  color: #000000; }
+
 body {
-  background-color: #ecf6ef;
-  font: normal 16px/1.5 "Raleway", "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
-  padding: 0 7.5%; }
+  background-color: #f5f5f5;
+  font: normal 16px/1.5 "Raleway", "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; }
 
 h1, h2, p, ul, figure {
   margin: 0;
   margin-bottom: 1.5rem; }
 
 h1, h2 {
-  color: #2f3f69; }
+  color: #23a39d; }
 
 h1 {
   font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -599,7 +601,7 @@ h3 {
   font-size: 1em; }
 
 ul {
-  padding: 0; }
+  padding-left: 1.2em; }
   ul li {
     list-style-type: square; }
 
@@ -611,12 +613,12 @@ img {
   width: 100%; }
 
 pre {
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
   padding: 0.75em;
   text-align: left; }
 
 code {
-  color: #1a1c1a;
+  color: #000000;
   font-family: "Source Code Pro", monospace;
   font-size: 0.75em; }
 
@@ -624,19 +626,15 @@ header, article {
   padding: 3em 0 1.5em; }
 
 header, footer {
-  color: #2f3f69;
   text-align: center; }
 
-.no-pad {
-  margin-left: -8.82353%;
-  margin-right: -8.82353%; }
-
-.block-italic {
+.block-bold {
   display: block;
-  font-style: italic; }
+  font-weight: bold; }
 
 header a h1 {
-  border: 3px solid #2f3f69;
+  border: 3px solid #23a39d;
+  color: #23a39d;
   display: inline-block;
   font-size: 4em;
   margin-bottom: 3rem;
@@ -644,77 +642,69 @@ header a h1 {
   padding-bottom: 0.15em;
   width: 128.953px; }
 header a:hover h1, header a:active h1 {
-  border: 3px solid #ff754c; }
+  border: 3px solid #eb5b56; }
 header p {
-  margin-bottom: 2.8em; }
-header nav ul li {
-  display: inline-block; }
-  header nav ul li a {
-    color: #2f3f69;
-    display: block;
-    font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
-    line-height: 1;
-    padding-bottom: 0.35em; }
-    header nav ul li a:hover {
-      border-bottom: 3px solid #ff754c; }
-  header nav ul li .nav-active {
-    border-bottom: 3px solid #ff754c; }
-  header nav ul li:first-of-type {
-    margin-right: 3em; }
+  margin-bottom: 3em; }
+header nav ul {
+  padding-left: 0; }
+  header nav ul li {
+    display: inline-block; }
+    header nav ul li a {
+      color: #23a39d;
+      display: block;
+      font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1;
+      padding-bottom: 0.15em; }
+      header nav ul li a:hover {
+        border-bottom: 3px solid #eb5b56; }
+    header nav ul li .nav-active {
+      border-bottom: 3px solid #eb5b56; }
+    header nav ul li:first-of-type {
+      margin-right: 3em; }
 
 article {
   background-color: #ffffff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 3em;
   padding-left: 7.5%;
   padding-right: 7.5%; }
   article h2, article h3 {
     margin-bottom: 0; }
   article a {
-    color: #ff754c; }
+    color: #eb5b56; }
     article a:hover, article a:active {
-      color: #8a9488; }
+      color: #23a39d; }
 
-.blue-article {
-  background-color: #2f3f69;
-  color: #ffffff; }
-  .blue-article h1 {
-    color: #ffffff; }
-  .blue-article h2 {
-    color: #ffea8d; }
-
-footer {
-  padding-top: 3em; }
-  footer ul, footer p {
-    font-size: 0.875em;
-    line-height: 1.71429em; }
+footer ul, footer p {
+  font-size: 0.875em;
+  line-height: 1.71429em; }
+footer ul {
+  padding-left: 0; }
   footer ul li {
     display: inline-block; }
     footer ul li a {
-      color: #2f3f69;
+      color: #000000;
       padding: 0 0.25em; }
       footer ul li a:hover, footer ul li a:active {
-        color: #8a9488; }
+        color: #eb5b56; }
 
 .portfolio-item {
   margin-bottom: 3em;
   padding-left: 7.5%;
   padding-right: 7.5%;
-  text-align: center;
-  -webkit-box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3);
-  -moz-box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3);
-  box-shadow: 4px 4px 5px 0px rgba(138, 148, 136, 0.3); }
+  text-align: center; }
   .portfolio-item .portfolio-logo {
     display: block;
     margin: 0 auto 3em;
     width: 60%; }
   .portfolio-item .portfolio-copy h1 a {
-    color: #2f3f69; }
+    color: #23a39d; }
     .portfolio-item .portfolio-copy h1 a:hover {
-      color: #8a9488; }
-
-main > div:last-of-type .portfolio-item {
-  margin-bottom: 0; }
+      border-bottom: 3px solid #23a39d; }
 
 .about-headline h1 {
   display: none; }
@@ -727,13 +717,15 @@ main > div:last-of-type .portfolio-item {
 .code {
   text-align: center; }
   .code h2 {
-    margin: 3em 0 1.5em; }
+    color: #000000;
+    margin: 1.5em 0; }
   .code img {
     margin-bottom: 1.5em; }
   .code pre {
-    background-color: #efefef;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
     scroll-x: auto; }
   .code .retina-1x, .code .retina-2x, .code .retina-3x {
     margin-left: auto;
@@ -745,21 +737,17 @@ main > div:last-of-type .portfolio-item {
     width: 80%; }
 
 .github {
-  background: url("../img/github-logo-active.png") no-repeat center center;
+  background: url("../img/github-logo.png") no-repeat center center;
   background-size: contain;
   clear: both;
   display: block;
   height: 3em;
   margin: 0 auto 1.5em; }
   .github:hover, .github:visited {
-    background-image: url("../img/github-logo.png"); }
+    background-image: url("../img/github-logo-active.png"); }
 
 .hero-desktop {
   display: none; }
-
-.blue {
-  background-color: #2f3f69;
-  margin-bottom: 1.5em; }
 
 @media screen and (min-width: 768px) {
   div[class*="col-sm"] {
@@ -807,29 +795,24 @@ main > div:last-of-type .portfolio-item {
     font-size: 18px;
     padding: 0; }
 
-  .no-pad {
-    margin: 0; }
-
   header a h1 {
     padding: 0.25em 0 0.15em; }
 
-  article, .blue-article {
-    padding-left: 0;
-    padding-right: 0; }
-
-  .blue-article h1 {
-    text-align: center; }
+  article {
+    padding: 6em 0 4.5em 0; }
 
   .portfolio-item {
-    margin-left: 7.5%;
-    margin-right: 7.5%; }
+    margin-left: 3.125%;
+    margin-right: 3.125%; }
 
   .about-headline {
+    background-color: #23a39d;
     position: relative; }
     .about-headline h1 {
+      color: #ffffff;
       display: block;
       font-size: 1.75rem;
-      left: 45%;
+      left: 50%;
       line-height: 1.2;
       position: absolute;
       text-align: center;
@@ -894,13 +877,19 @@ main > div:last-of-type .portfolio-item {
     margin-left: 25%; }
 
   header {
-    padding: 4.5em 4.16667% 1.5em; }
+    padding: 4.5em 0 1.5em; }
 
-  header p {
-    margin-top: 3em; }
-  header ul {
-    margin-top: 3em;
-    text-align: right; }
+  header {
+    text-align: left; }
+    header a {
+      text-align: center; }
+    header p {
+      line-height: 1.71429em;
+      margin-top: 3.4rem;
+      font-size: 0.875em; }
+    header ul {
+      margin-top: 3em;
+      text-align: right; }
 
   footer {
     text-align: left; }
@@ -922,7 +911,10 @@ main > div:last-of-type .portfolio-item {
       padding-left: 4.16667%;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%); } }
+      transform: translateY(-50%); }
+
+  .hero-desktop {
+    padding: 0; } }
 @media screen and (min-width: 1366px) {
   div[class*="col-lg"] {
     float: left; }
@@ -932,10 +924,13 @@ main > div:last-of-type .portfolio-item {
     div[class*="col-lg"]:last-of-type {
       padding-right: 0; }
 
-  div .col-lg-2 {
+  .col-lg-2 {
     padding-left: 3.125%;
     padding-right: 0;
     width: 16.66667%; }
+
+  .col-lg-6 {
+    width: 50%; }
 
   .col-lg-9 {
     width: 75%; }
@@ -945,6 +940,9 @@ main > div:last-of-type .portfolio-item {
 
   .offset-lg-1 {
     margin-left: 8.33333%; }
+
+  .offset-lg-3 {
+    margin-left: 25%; }
 
   main {
     margin-top: 1.5em; }
@@ -976,6 +974,7 @@ main > div:last-of-type .portfolio-item {
   footer {
     font-size: 0.875em;
     line-height: 1.71429em;
-    padding-top: 6em; } }
+    margin-bottom: 1.5rem;
+    padding-top: 6rem; } }
 
 /*# sourceMappingURL=css.css.map */

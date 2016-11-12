@@ -61,15 +61,21 @@
   // // // // // // // // // // // // //
   // global elements and helper classes
   header {
-    padding: 4.5em 1/24*100% 1.5em;
+    padding: 4.5em 0 1.5em;
   }
 
 
   // // // // // // // //
   // main page elements
   header {
+    text-align: left;
+    a {
+      text-align: center;
+    }
     p {
-      margin-top: 3em;
+      line-height: 24/14*1em;
+      margin-top: 3.4rem;
+      font-size: 0.875em;
     }
     ul {
       margin-top: 3em;
@@ -107,6 +113,13 @@
       top: 50%;
       transform: translateY(-50%);
     }
+  }
+
+
+  // // // // // // // // // //
+  // portfolio classes
+  .hero-desktop {
+    padding: 0;
   }
 
 } // end media query

@@ -69,10 +69,6 @@
     padding: 0;
   }
 
-  .no-pad {
-    margin: 0;
-  }
-
 
   // // // // // // // //
   // main page elements
@@ -84,33 +80,29 @@
     }
   }
 
-  article, .blue-article {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .blue-article {
-    h1 {
-      text-align: center;
-    }
+  article {
+    padding: 6em 0 4.5em 0;
   }
 
 
   // // // // // // // // // // //
   // home page specific classes
   .portfolio-item {
-    margin-left: 24/320*100%;
-    margin-right: 24/320*100%;
+    margin-left: 24/768*100%;
+    margin-right: 24/768*100%;
   }
 
 
   // // // // // // // // // // //
   // about page specific classes
   .about-headline {
+    background-color: $teal;
     position: relative;
     h1 {
+      color: $white;
       display: block;
       font-size: 1.75rem;
-      left: 45%;
+      left: 50%;
       line-height: 1.2;
       position: absolute;
       text-align: center;
