@@ -265,6 +265,27 @@ footer {
   }
 }
 
+.download {
+  border: 2px solid $teal;
+  border-radius: 50%;
+  color: $teal;
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 40px;
+  line-height: 1.3;
+  margin: 1.5em auto;
+  width: 40px;
+  &:hover {
+    border: 2px solid $coral;
+    color: $coral;
+  }
+}
+
 .hero-desktop {
   display: none;
+}
+
+.hero-mobile {
+  padding: 0 1.5em;
 }
