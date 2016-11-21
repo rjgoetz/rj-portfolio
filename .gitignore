@@ -2,3 +2,4 @@
 *.map
 PUBLIC/doc/**
 .DS_Store
+sites/
